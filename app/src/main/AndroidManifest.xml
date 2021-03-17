@@ -9,14 +9,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat">
-        <activity android:name=".TodoActivity">
+        <activity android:name=".TodoActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".TodoDetailActivity">
+        <activity android:name=".TodoDetailActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden" >
         </activity>
     </application>
 

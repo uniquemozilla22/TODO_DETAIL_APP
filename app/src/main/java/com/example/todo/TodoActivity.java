@@ -73,7 +73,25 @@ public class TodoActivity extends AppCompatActivity {
         buttonNext.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                mTodoIndex = (mTodoIndex + 1) % mTodos.length;
+                if (mTodoIndex < mTodos.length - 1) {
+                    mTodoIndex += 1;
+                } else {
+                    mTodoIndex = 0;
+                }
+                textViewTodo.setText(mTodos[mTodoIndex]);
+                setTextViewComplete("");
+            }
+        });
+
+        Button buttonPrev = (Button) findViewById(R.id.buttonPrev);
+        buttonPrev.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                if ( mTodoIndex - 1 <=0) {
+                    mTodoIndex = 0;
+                } else {
+                    mTodoIndex -= 1;
+                }
                 textViewTodo.setText(mTodos[mTodoIndex]);
                 setTextViewComplete("");
             }
